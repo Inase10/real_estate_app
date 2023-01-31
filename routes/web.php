@@ -112,20 +112,20 @@ Route::group(['middleware'=>['auth','role:admin']],function(){
 Route::get('storage/link', function ()
 {
     echo 'storage link command running..';
-    return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artian storage:link');
+    return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan storage:link');
 });
 
 Route::get('migrate', function ()
 {
     echo 'storage link command running..';
-    return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artian migration');
+    return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan migration');
 });
 
 
 Route::get('keygenerate', function ()
 {
     echo 'storage link command running..';
-    return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artian key:generate');
+    return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan key:generate');
 });
 
 
