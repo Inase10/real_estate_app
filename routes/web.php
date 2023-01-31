@@ -111,23 +111,33 @@ Route::group(['middleware'=>['auth','role:admin']],function(){
 
 Route::get('storage/link', function ()
 {
-    echo 'storage link command running..';
+    echo 'command running..';
     return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan storage:link');
 });
 
 Route::get('migrate', function ()
 {
-    echo 'storage link command running..';
-    return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan migration');
+    echo 'command running..';
+    return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan migrate');
 });
 
 
 Route::get('keygenerate', function ()
 {
-    echo 'storage link command running..';
+    echo 'command running..';
     return exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan key:generate');
 });
 
+
+Route::get('clear_cache', function ()
+{
+    echo 'command running..';
+    exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan cache:clear');
+    exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan config:clear');
+    exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan route:clear');
+    exec('cd /home/u721598058/domains/pvp-craft.shop/public_html/myrealestate/ && php artisan view:clear');
+    return 'DONE';
+});
 
 
 require __DIR__.'/auth.php';
