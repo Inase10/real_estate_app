@@ -9,6 +9,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\GEOlocationController;
 use App\Http\Controllers\web\UserControllerWeb;
+use Illuminate\Support\Facades\Artisan;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -105,6 +107,13 @@ Route::group(['middleware'=>['auth','role:admin']],function(){
 
 });
 
+
+
+Route::get('migrate', function ()
+{
+    echo 'storage link command running..';
+    return Artisan::exec('php artian storage:link');
+});
 
 
 require __DIR__.'/auth.php';
